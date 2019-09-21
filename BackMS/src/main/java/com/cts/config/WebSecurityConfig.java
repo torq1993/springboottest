@@ -33,7 +33,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception
 	{
 		auth.inMemoryAuthentication()
-		.withUser(serviceConfig.authUsername).password(serviceConfig.authPassword).authorities("ROLE_ADMIN");
+		.withUser(serviceConfig.authUsername).password("{noop}"+serviceConfig.authPassword).authorities("ROLE_ADMIN");
 	}
 	
 	@Override
